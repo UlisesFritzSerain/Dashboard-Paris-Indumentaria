@@ -1,5 +1,5 @@
 import React from 'react';
-import image from '../assets/images/logo-DH.png';
+import image from '../assets/images/logo-nuevo.jpg';
 import {Link,Switch,Route,Routes} from 'react-router-dom';
 
 import ContentWrapper from './ContentWrapper';

@@ -1,3 +1,6 @@
+
+// CATEGORIAS DE PRODUCTOS
+
 import React from "react";
 
 function LastMovieInDb() {
@@ -13,52 +16,52 @@ function LastMovieInDb() {
           <div className="row">
             <div className="col-lg-6 mb-4">
               <div className="card bg-dark text-white shadow">
-                <div className="card-body">Acción</div>
+                <div className="card-body">Remeras</div>
               </div>
             </div>
             <div className="col-lg-6 mb-4">
               <div className="card bg-dark text-white shadow">
-                <div className="card-body">Animación</div>
+                <div className="card-body">Buzos</div>
               </div>
             </div>
             <div className="col-lg-6 mb-4">
               <div className="card bg-dark text-white shadow">
-                <div className="card-body">Aventura</div>
+                <div className="card-body">Pantalones</div>
               </div>
             </div>
             <div className="col-lg-6 mb-4">
               <div className="card bg-dark text-white shadow">
-                <div className="card-body">Ciencia Ficción</div>
+                <div className="card-body">Camisas</div>
               </div>
             </div>
             <div className="col-lg-6 mb-4">
               <div className="card bg-dark text-white shadow">
-                <div className="card-body">Comedia</div>
+                <div className="card-body">Trajes de Baño</div>
               </div>
             </div>
             <div className="col-lg-6 mb-4">
               <div className="card bg-dark text-white shadow">
-                <div className="card-body">Documental</div>
+                <div className="card-body">Medias</div>
               </div>
             </div>
             <div className="col-lg-6 mb-4">
               <div className="card bg-dark text-white shadow">
-                <div className="card-body">Drama</div>
+                <div className="card-body">Gorras</div>
               </div>
             </div>
             <div className="col-lg-6 mb-4">
               <div className="card bg-dark text-white shadow">
-                <div className="card-body">Fantasia</div>
+                <div className="card-body">Camperas</div>
               </div>
             </div>
             <div className="col-lg-6 mb-4">
               <div className="card bg-dark text-white shadow">
-                <div className="card-body">Infantiles</div>
+                <div className="card-body">Bermudas</div>
               </div>
             </div>
             <div className="col-lg-6 mb-4">
               <div className="card bg-dark text-white shadow">
-                <div className="card-body">Musical</div>
+                <div className="card-body">Accesorios</div>
               </div>
             </div>
           </div>
