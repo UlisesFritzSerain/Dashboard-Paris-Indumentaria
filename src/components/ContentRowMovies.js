@@ -1,4 +1,5 @@
 import React from 'react';
+import { useEffect, useState, useRef } from 'react';
 import SmallCard from './SmallCard';
 
 /*  Cada set de datos es un objeto literal */
@@ -29,6 +30,22 @@ let actorsQuantity = {
     cuantity:'49',
     icon:'fa-user-check'
 }
+
+function productosApi(){
+    useEffect(()=>{
+        fetch('/api/productos')
+        .then(productosJSON => productosJSON.json())
+        .then( productos => productos.count)
+    })
+}
+function usuariosApi(){
+    useEffect(()=>{
+        fetch('/api/users')
+        .then(usersJSON => usersJSON.json())
+        .then( users => users.count)
+    })
+}
+
 
 let cartProps = [moviesInDB, totalAwards, actorsQuantity];
 
