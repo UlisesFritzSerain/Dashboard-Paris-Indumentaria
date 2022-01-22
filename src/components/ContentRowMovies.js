@@ -1,5 +1,5 @@
 import React from 'react';
-import { useEffect, useState, useRef } from 'react';
+import { useEffect, useState, useRef, Component } from 'react';
 import SmallCard from './SmallCard';
 
 /*  Cada set de datos es un objeto literal */
@@ -47,21 +47,46 @@ let actorsQuantity = {
 // }
 
 
-let cartProps = [moviesInDB, totalAwards, actorsQuantity];
+// SMALL CARDS
+class ContentRowProducts extends Component {
+    constructor() {
+      super();
+      this.state = {
+        listadoProductos: [],
+      };
+    }
+    componentDidMount() {
+      fetch("/api/productos")
+        .then((respuesta) => {
+          return respuesta.json();
+        })
+        .then((products) => {
+          this.setState({
+            listadoProductos: products,
+          });
+        })
+        .catch((error) => console.log(error));
+    }
 
-function ContentRowMovies(){
-    return (
+render(){
     
-        <div className="row">
-            
-            {cartProps.map( (movie, i) => {
-
-                return <SmallCard {...movie} key={i}/>
-            
-            })}
-
-        </div>
-    )
+        return (
+            <>
+           <div className="container-fluid">
+          <div className="container-fluid">
+                
+                {this.state.listadoProductos.map((product, i) => {
+    
+                    return <SmallCard {...product} key={i}/>
+                
+                })}
+            </div>
+            </div>
+            </>
+        )
+    }
 }
+export default ContentRowProducts;
 
-export default ContentRowMovies;
+
+
