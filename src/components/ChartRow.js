@@ -4,17 +4,15 @@ import React from 'react';
 function ChartRow(props){
     return (
                 <tr>
-                    <td>{props.Title}</td>
-                    <td>{props.Length}</td>
-                    <td>{props.Rating}</td>
+                    <td>{props.name}</td>
+                    <td>{props.description}</td>
+                    <td>{props.price}</td>
                     <td>
                         <ul>
-                            {props.Categories.map( (category,i) => 
-                                <li key={`category ${i}`}>{category}</li>
-                            )}
+                            {props.category_id}
                         </ul>
                     </td>
-                    <td>{props.Awards}</td>
+                    <td>{props.stock}</td>
                 </tr>
             )
     }
