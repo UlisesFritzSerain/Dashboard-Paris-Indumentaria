@@ -27,7 +27,7 @@ function SideBar(){
                 <li className="nav-item active">
                     <Link className="nav-link" to="/">
                         <i className="fas fa-fw fa-tachometer-alt"></i>
-                        <span>Dashboard - DH movies</span></Link>
+                        <span>Dashboard - París Indumentaria</span></Link>
                 </li>
 
                 {/*<!-- Divider -->*/}
@@ -40,7 +40,7 @@ function SideBar(){
                 <li className="nav-item">
                     <Link className="nav-link collapsed" to="GenresInDb">
                         <i className="fas fa-fw fa-folder"></i>
-                        <span>Generos</span>
+                        <span>Categorías</span>
                     </Link>
                 </li>
 
@@ -48,14 +48,14 @@ function SideBar(){
                 <li className="nav-item">
                     <Link className="nav-link" to="LastMovieInDb">
                         <i className="fas fa-fw fa-chart-area"></i>
-                        <span>Última Película</span></Link>
+                        <span>Último Producto</span></Link>
                 </li>
 
                 {/*<!-- Nav Item - Tables -->*/}
                 <li className="nav-item">
                     <a className="nav-link" href="/">
                         <i className="fas fa-fw fa-table"></i>
-                        <span>Tables</span></a>
+                        <span>Listado de productos</span></a>
                 </li>
 
                 {/*<!-- Divider -->*/}

@@ -1,25 +1,21 @@
 import React from 'react';
-import imagenFondo from '../assets/images/mandalorian.jpg';
+import imagen from '../assets/images/mandalorian.jpg';
 import { useEffect, useState } from 'react';
 
 function LastMovieInDb(){
 
-    const [product, setProducts] = useState([]);
+    const [products, setProducts] = useState([]);
   
   useEffect(() => {
    
     fetch('/api/productos')
     .then(response => response.json())
-    .then(product => 
-      
-      {setProducts(product)}
-      
-    )
-  
-    .catch(error => {console.log(error);})
+    .then(products => setProducts(products.last))  
+    .catch(error => {console.log(error)})
   },[]);
-  let nombreProducto = product.data[((product.data).length)-1];
-  console.log(nombreProducto)
+    console.log(products.name);
+    let nombreProducto = products.name;
+    // let imagen = '../assets/images/1634059312561_img_.jpg';
 
     return(
         <>
@@ -31,7 +27,7 @@ function LastMovieInDb(){
                 
                 <div className="card-body">
                     <div className="text-center">
-                        <img className="img-fluid px-3 px-sm-4 mt-3 mb-4" style={{width: 40 +'rem'}} src={imagenFondo} alt=" Star Wars - Mandalorian "/>
+                        <img className="img-fluid px-3 px-sm-4 mt-3 mb-4" style={{width: 40 +'rem'}} src={imagen} alt=" Star Wars - Mandalorian "/>
                     </div>
                     <p>{nombreProducto}</p>
                     <a className="btn btn-danger" target="_blank" rel="nofollow" href="/">View movie detail</a>
