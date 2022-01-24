@@ -8,7 +8,7 @@ function ContentRowProducts(){
 const [product, setProducts] = useState([]);
   
   useEffect(() => {
-    console.log('Se montó el componente');
+    
     fetch('/api/productos')
     .then(response => response.json())
     .then(product => 
@@ -22,7 +22,7 @@ const [product, setProducts] = useState([]);
   const [users, setUsers] = useState([]);
   
   useEffect(() => {
-    console.log('Se montó el componente');
+    
     fetch('/api/users')
     .then(response => response.json())
     .then(users => 

@@ -3,8 +3,8 @@ import image from '../assets/images/logo-nuevo.jpg';
 import {Link,Switch,Route,Routes} from 'react-router-dom';
 
 import ContentWrapper from './ContentWrapper';
-import GenresInDb from './GenresInDb';
-import LastMovieInDb from './LastMovieInDb';
+import CategoriesInDB from './CategoriesInDB';
+import LastProductInDb from './LastProductInDb';
 import NotFound from './NotFound';
 
 function SideBar(){
@@ -65,8 +65,8 @@ function SideBar(){
             
             <Routes>
                 <Route  exact path='/' element = {<ContentWrapper/>} />
-                <Route  path='/GenresInDb' element = {<GenresInDb/>} />
-                <Route  path='/LastMovieInDb' element = {<LastMovieInDb/>} />
+                <Route  path='/GenresInDb' element = {<CategoriesInDB/>} />
+                <Route  path='/LastProductInDb' element = {<LastProductInDb/>} />
                 <Route path="*" element={<NotFound />} />
 
             </Routes>
