@@ -1,91 +1,85 @@
 import React from 'react';
-import { useEffect, useState, useRef, Component } from 'react';
+import { useEffect, useState, useRef} from 'react';
 import SmallCard from './SmallCard';
 
 /*  Cada set de datos es un objeto literal */
 
+function ContentRowProducts(){
+const [product, setProducts] = useState([]);
+  
+  useEffect(() => {
+    console.log('Se montó el componente');
+    fetch('/api/productos')
+    .then(response => response.json())
+    .then(product => 
+      
+      {setProducts(product)
+      }
+    )
+    .catch(error => {console.log(error);})
+  },[]);
+
+  const [users, setUsers] = useState([]);
+  
+  useEffect(() => {
+    console.log('Se montó el componente');
+    fetch('/api/users')
+    .then(response => response.json())
+    .then(users => 
+      
+      {setUsers(users)
+      }
+    )
+    .catch(error => {console.log(error);})
+  },[])
+
+
 /* <!-- Movies in DB --> */
 
-let moviesInDB = {
-    title: 'Movies in Data Base',
-    color: 'primary', 
-    cuantity: 21,
-    icon: 'fa-clipboard-list'
+let totalProducts = {
+  title: 'Cantidad de Productos',
+  color: 'primary', 
+  cuantity: product.count,
+  icon: 'fa-clipboard-list'
 }
 
 /* <!-- Total awards --> */
 
-let totalAwards = {
-    title:' Total awards', 
-    color:'success', 
-    cuantity: '79',
-    icon:'fa-award'
+let totalCategorias = {
+  title:' Total de Categorias', 
+  color:'success', 
+  cuantity: product.category,
+  icon:'fas fa-tshirt'
 }
 
 /* <!-- Actors quantity --> */
 
-let actorsQuantity = {
-    title:'Actors quantity' ,
-    color:'warning',
-    cuantity:'49',
-    icon:'fa-user-check'
+let totalUsuarios = {
+  title:'Cantidad de Usuarios' ,
+  color:'warning',
+  cuantity: users.count,
+  icon:'fa-user-check'
 }
-
-// function productosApi(){
-//     useEffect(()=>{
-//         fetch('/api/productos')
-//         .then(productosJSON => productosJSON.json())
-//         .then( productos => productos.count)
-//     })
-// }
-// function usuariosApi(){
-//     useEffect(()=>{
-//         fetch('/api/users')
-//         .then(usersJSON => usersJSON.json())
-//         .then( users => users.count)
-//     })
-// }
-
-
 // SMALL CARDS
-class ContentRowProducts extends Component {
-    constructor() {
-      super();
-      this.state = {
-        listadoProductos: [],
-      };
-    }
-    componentDidMount() {
-      fetch("/api/productos")
-        .then((respuesta) => {
-          return respuesta.json();
-        })
-        .then((products) => {
-          this.setState({
-            listadoProductos: products,
-          });
-        })
-        .catch((error) => console.log(error));
-    }
+     
+    
+let cartProps = [totalProducts, totalCategorias, totalUsuarios];
 
-render(){
-    
-        return (
-            <>
-           <div className="container-fluid">
-          <div className="container-fluid">
-                
-                {this.state.listadoProductos.map((product, i) => {
-    
-                    return <SmallCard {...product} key={i}/>
-                
-                })}
-            </div>
-            </div>
-            </>
-        )
-    }
-}
+return (
+
+    <div className=" row">
+        
+        {cartProps.map( (movie, i) => {
+
+            return <SmallCard {...movie} key={i}/>
+        
+        })}
+
+    </div>
+)
+
+  }  
+
 export default ContentRowProducts;
 
 
