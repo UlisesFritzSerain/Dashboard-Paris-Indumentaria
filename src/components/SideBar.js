@@ -5,6 +5,8 @@ import {Link,Switch,Route,Routes} from 'react-router-dom';
 import ContentWrapper from './ContentWrapper';
 import CategoriesInDB from './CategoriesInDB';
 import LastProductInDb from './LastProductInDb';
+import Chart from './Chart'
+import ChartUsers from './ChartUsers'
 import NotFound from './NotFound';
 
 function SideBar(){
@@ -46,16 +48,21 @@ function SideBar(){
 
                 {/*<!-- Nav Item - Charts -->*/}
                 <li className="nav-item">
-                    <Link className="nav-link" to="LastMovieInDb">
+                    <Link className="nav-link" to="LastProductInDb">
                         <i className="fas fa-fw fa-chart-area"></i>
                         <span>Último Producto</span></Link>
                 </li>
 
                 {/*<!-- Nav Item - Tables -->*/}
                 <li className="nav-item">
-                    <a className="nav-link" href="/">
+                    <Link className="nav-link" to="Chart">
                         <i className="fas fa-fw fa-table"></i>
-                        <span>Listado de productos</span></a>
+                        <span>Listado de productos</span></Link>
+                </li>
+                <li className="nav-item">
+                    <Link className="nav-link" to="ChartUsers">
+                        <i className="fas fa-users"></i>
+                        <span>Listado de usuarios</span></Link>
                 </li>
 
                 {/*<!-- Divider -->*/}
@@ -67,6 +74,9 @@ function SideBar(){
                 <Route  exact path='/' element = {<ContentWrapper/>} />
                 <Route  path='/GenresInDb' element = {<CategoriesInDB/>} />
                 <Route  path='/LastProductInDb' element = {<LastProductInDb/>} />
+                <Route  path='/Chart' element = {<Chart/>} />
+                <Route  path='/ChartUsers' element = {<ChartUsers/>} />
+
                 <Route path="*" element={<NotFound />} />
 
             </Routes>

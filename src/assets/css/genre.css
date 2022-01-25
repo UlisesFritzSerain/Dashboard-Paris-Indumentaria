@@ -1,0 +1,10 @@
+.mostrar-cantidad{
+    opacity: 0;
+    
+}
+
+
+.card-body:hover > .mostrar-cantidad{
+    transition: all 1s;
+opacity: 1;
+}

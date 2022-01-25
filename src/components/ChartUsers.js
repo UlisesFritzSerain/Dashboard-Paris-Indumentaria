@@ -1,19 +1,19 @@
 import React from 'react';
-import ChartRow from './ChartRow';
+import ChartRowUsers from './ChartRowUsers';
 import {useState, useEffect} from 'react';
 
 
 
-function Chart (){
-    const [product, setProducts] = useState([]);
+function ChartUsers (){
+    const [user, setUsers] = useState([]);
   
   useEffect(() => {
     
-    fetch('/api/productos')
+    fetch('/api/users')
     .then(response => response.json())
-    .then(product => 
+    .then(user => 
       
-      {setProducts(product.data)
+      {setUsers(user.users)
       }
     )
     .catch(error => {console.log(error);})
@@ -27,34 +27,33 @@ function Chart (){
                     <table className="table table-bordered" id="dataTable" width="100%" cellSpacing="0">
                         <thead>
                             <tr>
-                                <th>Producto</th>
-                                <th>Descripción</th>
-                                <th>Precio</th>
-                                <th>Categoria</th>
-                                <th>Stock</th>
+                                <th>ID</th>
+                                <th>Nombre</th>
+                                <th>Apellido</th>
+                                <th>Email Registrado</th>
+                                
                             </tr>
                         </thead>
                         <tfoot>
                             <tr>
-                                <th>Producto</th>
-                                <th>Descripción</th>
-                                <th>Precio</th>
-                                <th>Categoria</th>
-                                <th>Stock</th>
+                                <th>ID</th>
+                                <th>Nombre</th>
+                                <th>Apellido</th>
+                                <th>Email Registrado</th>
+                                
                             </tr>
                         </tfoot>
                         <tbody>
                             {
                         
-                           product.map( ( row , i) => {
-                                return <ChartRow { ...row} key={i}/>
+                           user.map( ( row , i) => {
+                                return <ChartRowUsers { ...row} key={i}/>
                             })
                             
                             }
 
                         </tbody>
                     </table>
-                    
                 </div>
             </div>
         </div>
@@ -62,4 +61,4 @@ function Chart (){
     )
 }
 
-export default Chart;
+export default ChartUsers;
